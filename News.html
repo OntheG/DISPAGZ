@@ -14,14 +14,13 @@
     }
 
     body {
-      background: #e2f0ff;  /* very light sky blue */
+      background: #e2f0ff;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       display: flex;
       justify-content: center;
       line-height: 1.5;
     }
 
-    /* main card */
     .news-wrapper {
       max-width: 1100px;
       width: 100%;
@@ -30,12 +29,10 @@
       border-radius: 36px 36px 28px 28px;
       box-shadow: 0 20px 40px rgba(0, 85, 170, 0.15);
       overflow: hidden;
-      transition: all 0.2s;
     }
 
-    /* ===== BRIGHT BLUE HEADER ===== */
     .brand-bar {
-      background: #0077e4;  /* vibrant cerulean */
+      background: #0077e4;
       padding: 18px 22px;
       display: flex;
       align-items: center;
@@ -63,7 +60,6 @@
       text-shadow: 0 2px 4px rgba(0,60,130,0.3);
     }
 
-    /* date row – cleaner */
     .dateline {
       display: flex;
       justify-content: space-between;
@@ -91,7 +87,6 @@
       letter-spacing: 0.4px;
     }
 
-    /* ===== SLIDESHOW (sleeker, brighter) ===== */
     .slideshow-container {
       position: relative;
       margin: 16px 22px 8px 22px;
@@ -124,7 +119,6 @@
       background: #a2c9ff;
     }
 
-    /* arrows – subtle blue */
     .slide-btn {
       position: absolute;
       top: 50%;
@@ -149,7 +143,6 @@
     .prev { left: 12px; }
     .next { right: 12px; }
 
-    /* dots with blue */
     .slide-indicators {
       display: flex;
       justify-content: center;
@@ -169,7 +162,6 @@
       width: 32px;
     }
 
-    /* new headline */
     h1 {
       font-size: 2.1rem;
       line-height: 1.2;
@@ -181,7 +173,6 @@
       padding-left: 18px;
     }
 
-    /* article body */
     .article-content {
       margin: 0 22px 25px 22px;
       font-size: 1.05rem;
@@ -197,7 +188,6 @@
       font-weight: 600;
     }
 
-    /* video block – fresh blue vibe */
     .video-block {
       margin: 30px 0 30px 0;
       background: #f0f8ff;
@@ -232,7 +222,6 @@
       display: block;
     }
 
-    /* quote block – with initial D only */
     .insider-quote {
       background: #ecf5ff;
       padding: 24px 26px;
@@ -261,7 +250,6 @@
       margin-top: 14px;
     }
 
-    /* ===== NEW PARAGRAPH ABOUT IMAGE DAMAGE ===== */
     .image-impact {
       background: #ecf9ff;
       padding: 22px 24px;
@@ -278,7 +266,7 @@
       color: #004e9e;
     }
 
-    /* ===== COMMENTS SECTION (fresh & bilingual) ===== */
+    /* ===== COMMENTS SECTION (updated: no language tags) ===== */
     .comments-section {
       background: #ffffff;
       border-radius: 36px 36px 20px 20px;
@@ -353,18 +341,7 @@
       margin-bottom: 6px;
       word-break: break-word;
     }
-    .comment-lang {
-      display: inline-block;
-      background: transparent;
-      color: #3e77b0;
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.3px;
-      border: 1px solid #b2d1f0;
-      padding: 2px 10px;
-      border-radius: 50px;
-      margin-top: 4px;
-    }
+    /* language tag removed */
     .comment-footer {
       display: flex;
       gap: 18px;
@@ -387,7 +364,6 @@
       border-radius: 0 0 20px 20px;
     }
 
-    /* footer */
     .article-footer {
       border-top: 1px solid #d3e5ff;
       padding: 18px 22px 22px 22px;
@@ -404,35 +380,28 @@
     }
     .share-icons i:hover { color: #003b70; }
 
-    /* ===== BEAUTIFUL MOBILE (smaller, more refined) ===== */
+    /* Mobile */
     @media (max-width: 600px) {
       .brand-bar { padding: 14px 18px; }
       .brand-icon { width: 44px; height: 44px; font-size: 1.6rem; }
       .brand-text { font-size: 1.9rem; }
 
-      .dateline {
-        padding: 12px 18px 5px 18px;
-        font-size: 0.8rem;
-      }
+      .dateline { padding: 12px 18px 5px 18px; font-size: 0.8rem; }
       .category { font-size: 0.7rem; padding: 4px 12px; }
 
       .slideshow-container { margin: 12px 18px 5px 18px; }
 
       h1 {
-        font-size: 1.6rem;   /* smaller, punchy */
+        font-size: 1.6rem;
         margin: 14px 18px 10px 18px;
         border-left-width: 5px;
         padding-left: 14px;
-        line-height: 1.25;
       }
 
       .article-content {
         margin: 0 18px 20px 18px;
-        font-size: 0.92rem;   /* comfortable mobile read */
-        line-height: 1.55;
+        font-size: 0.92rem;
       }
-
-      .article-content p { margin-bottom: 1.3rem; }
 
       .slide-btn { width: 38px; height: 38px; font-size: 1.4rem; }
       .prev { left: 8px; }
@@ -461,14 +430,9 @@
       .comment-footer { font-size: 0.75rem; }
       .more-comments { padding: 14px 18px; }
 
-      .article-footer {
-        padding: 14px 18px 18px 18px;
-        font-size: 0.8rem;
-      }
+      .article-footer { padding: 14px 18px 18px 18px; font-size: 0.8rem; }
       .share-icons i { font-size: 1.2rem; margin-left: 12px; }
     }
-
-    /* extra small screens (under 400) */
     @media (max-width: 400px) {
       h1 { font-size: 1.45rem; }
       .brand-text { font-size: 1.7rem; }
@@ -478,40 +442,34 @@
 </head>
 <body>
   <div class="news-wrapper">
-    <!-- header: DISPAGZ only, bright blue -->
     <div class="brand-bar">
       <div class="brand-icon">D</div>
       <div class="brand-text">DISPAGZ</div>
     </div>
 
-    <!-- date + category, fresh -->
     <div class="dateline">
       <span class="date"><i class="far fa-calendar-alt" style="margin-right: 5px;"></i>13 MARCH 2026</span>
       <span class="category"><i class="fas fa-bolt" style="margin-right: 5px;"></i>BACKLASH</span>
     </div>
 
-    <!-- slideshow: 13Mar1.png, 13Mar2.png, 13Mar3.png -->
     <div class="slideshow-container" id="slideshow">
       <div class="slides" id="slidesScroll">
-        <div class="slide"><img src="13Mar1.png" alt="Kafka at airport" loading="lazy"></div>
-        <div class="slide"><img src="13Mar2.png" alt="media crowd" loading="lazy"></div>
-        <div class="slide"><img src="13Mar3.png" alt="reporters surrounding" loading="lazy"></div>
+        <div class="slide"><img src="13mar1.png" alt="Kafka at airport" loading="lazy"></div>
+        <div class="slide"><img src="13mar2.png" alt="media crowd" loading="lazy"></div>
+        <div class="slide"><img src="13mar3.png" alt="reporters surrounding" loading="lazy"></div>
       </div>
       <button class="slide-btn prev" id="prevSlide" aria-label="previous"><i class="fas fa-chevron-left"></i></button>
       <button class="slide-btn next" id="nextSlide" aria-label="next"><i class="fas fa-chevron-right"></i></button>
     </div>
 
-    <!-- dots -->
     <div class="slide-indicators" id="slideDots">
       <span class="dot active"></span>
       <span class="dot"></span>
       <span class="dot"></span>
     </div>
 
-    <!-- NEW HEADLINE -->
     <h1>Online Backlash Erupts After Kafka’s Reported Airport Outburst in Japan</h1>
 
-    <!-- article body -->
     <div class="article-content">
       <p><strong>Renowned novelist and media entrepreneur Kafka</strong> has come under public scrutiny following an incident at Narita International Airport earlier this week. The writer, who recently arrived in Japan ahead of an event celebrating the release of his latest novel, was reportedly seen behaving harshly toward members of the press waiting at the terminal.</p>
 
@@ -519,7 +477,6 @@
 
       <p>According to footage circulating online, Kafka was heard saying, <strong>“Can you move aside? Give me some space. I’m not a celebrity. Just let me pass.”</strong> His tone was described by observers as blunt and impatient, with some reporters stating that the exchange felt unnecessarily confrontational.</p>
 
-      <!-- VIDEO: maret13.mp4 -->
       <div class="video-block">
         <div class="video-label">
           <i class="fas fa-play-circle"></i> <span>RAW FOOTAGE · Narita (maret13.mp4)</span>
@@ -538,97 +495,87 @@
 
       <p>The controversy has also raised questions due to Kafka’s position as the figure behind <strong>The Kachoo</strong>, a company known for its media and news presence. Critics have pointed out the irony of a prominent media figure appearing dismissive toward journalists.</p>
 
-      <!-- QUOTE with initial D only (source changed) -->
       <div class="insider-quote">
         <i class="fas fa-quote-left"></i> I’ve known Kafka personally for a long time. But lately, ever since his name became more popular, he’s become rough and often lashes out. It feels like the Kafka I used to know is gone. Honestly, he’s started to act more like a street thug now.
         <div class="source-initial">— D</div>
       </div>
 
-      <!-- NEW PARAGRAPH: damaging his friendly image as CEO and novelist -->
-      <div class="image-impact">
-        <p><strong>This incident is already taking a toll on Kafka's carefully built public image.</strong> Known until now as a friendly, approachable novelist and the affable CEO behind The Kachoo, the outburst has shocked many who saw him as a gracious media figure. Longtime observers note that the contrast between his previous warm demeanor and the impatience captured on video risks undermining the trust and likability he cultivated for years. Industry insiders suggest that if left unaddressed, the backlash could stain both his literary reputation and his standing as a media entrepreneur.</p>
-      </div>
 
-      <!-- ========== COMMENTS SECTION (pro/contra, bilingual) ========== -->
+        <p>This incident is already taking a toll on Kafka's carefully built public image. Known until now as a friendly, approachable novelist and the affable CEO behind The Kachoo, the outburst has shocked many who saw him as a gracious media figure. Longtime observers note that the contrast between his previous warm demeanor and the impatience captured on video risks undermining the trust and likability he cultivated for years. Industry insiders suggest that if left unaddressed, the backlash could stain both his literary reputation and his standing as a media entrepreneur.</p>
+
+      <p>As the story continues to circulate, neither Kafka nor his team has issued an official statement addressing the situation. Meanwhile, attention remains focused on his upcoming appearance in Japan, where he is expected to participate in events related to the launch of his newest literary work.</p>
+
+      <!-- ========== COMMENTS SECTION (exact text, no language tags) ========== -->
       <div class="comments-section">
         <div class="comments-header">
           <h3>Reader reactions</h3>
-          <span>pro & contra</span>
         </div>
 
-        <!-- comment 1 (English/Indonesian mix) -->
+        <!-- 1 -->
         <div class="comment-item">
           <div class="comment-avatar">@</div>
           <div class="comment-content">
             <div class="comment-user">@xxxxjdjdjsjskor <span>· 2h ago</span></div>
-            <div class="comment-text">Kenapa ya dia terlihat marah? 😕 dulu ramah banget</div>
-            <div class="comment-lang">🇮🇩 ID / EN</div>
+            <div class="comment-text">Why does he look so angry?</div>
             <div class="comment-footer"><i class="far fa-heart"></i> 342 <i class="far fa-comment"></i> 28</div>
           </div>
         </div>
 
-        <!-- comment 2 (Japanese) -->
+        <!-- 2 -->
         <div class="comment-item">
           <div class="comment-avatar">K</div>
           <div class="comment-content">
             <div class="comment-user">@kafkanaticoe <span>· 5h ago</span></div>
-            <div class="comment-text">aku rela menghabiskan uang ke Jepang dan menunggu kedatangannya, ternyata dia terlihat tak suka bertemu fansnya 😢💔 #kecewa</div>
-            <div class="comment-lang">🇯🇵 JP / ID</div>
+            <div class="comment-text">I was willing to spend money to come to Japan and waited for his arrival, but he looked like he didn't even like meeting his fans.</div>
             <div class="comment-footer"><i class="far fa-heart"></i> 1.2k <i class="far fa-comment"></i> 64</div>
           </div>
         </div>
 
-        <!-- comment 3 (English/ID) -->
+        <!-- 3 -->
         <div class="comment-item">
           <div class="comment-avatar">M</div>
           <div class="comment-content">
             <div class="comment-user">@1madestxxx <span>· 7h ago</span></div>
-            <div class="comment-text">Padahal biasanya dia terlihat ramah… what happened? 🤨</div>
-            <div class="comment-lang">🇬🇧 EN</div>
+            <div class="comment-text">But he usually looks friendly though.</div>
             <div class="comment-footer"><i class="far fa-heart"></i> 876 <i class="far fa-comment"></i> 31</div>
           </div>
         </div>
 
-        <!-- comment 4 (mix) -->
+        <!-- 4 -->
         <div class="comment-item">
           <div class="comment-avatar">T</div>
           <div class="comment-content">
             <div class="comment-user">@127dhankdxx <span>· 9h ago</span></div>
-            <div class="comment-text">Tetapi dia lebih tampan jika marah begitu hahahaha! 😂 Terlepas dari itu, aku rasa The Kachoo juga harus klarifikasi atau setidaknya menegur CEOnya itu, ya.. jika memang bisa sih...</div>
-            <div class="comment-lang">🇮🇩 ID</div>
+            <div class="comment-text">But he actually looks more handsome when he's angry like that hahaha! Still, I think <strong>The Kachoo</strong> should clarify this or at least warn their CEO… well, if that's even possible.</div>
             <div class="comment-footer"><i class="far fa-heart"></i> 2.3k <i class="far fa-comment"></i> 104</div>
           </div>
         </div>
 
-        <!-- comment 5 (English / reference to UK PM) -->
+        <!-- 5 -->
         <div class="comment-item">
           <div class="comment-avatar">J</div>
           <div class="comment-content">
             <div class="comment-user">@xxxhajfhsjd <span>· 11h ago</span></div>
-            <div class="comment-text">Wajar saja dia begitu, dia kan anak Perdana Menteri Inggris. Lihat saja dia tampak songong selama ini, tentu karena memakan uang ayahnya 🙄💸</div>
-            <div class="comment-lang">🇬🇧 EN / ID</div>
+            <div class="comment-text">No wonder he acts like that. He's the son of the British Prime Minister after all. He has always looked arrogant anyway, probably living off his father's money.</div>
             <div class="comment-footer"><i class="far fa-heart"></i> 5.6k <i class="far fa-comment"></i> 419</div>
           </div>
         </div>
 
-        <!-- comment 6 (Japanese/Indonesian sarcasm) -->
+        <!-- 6 -->
         <div class="comment-item">
           <div class="comment-avatar">S</div>
           <div class="comment-content">
             <div class="comment-user">@17372iwnaxz <span>· 13h ago</span></div>
-            <div class="comment-text">aku rasa dia money laundry di perusahaan yang ia buat ahahhahaha 😂💰 #tinfoilhat</div>
-            <div class="comment-lang">🇯🇵 JP / ID</div>
+            <div class="comment-text">I think he's laundering money through the company he created hahaha.</div>
             <div class="comment-footer"><i class="far fa-heart"></i> 999+ <i class="far fa-comment"></i> 77</div>
           </div>
         </div>
 
         <div class="more-comments">
-          <i class="far fa-comment-dots"></i> +9,999 more comments
+          <i class="far fa-comment-dots"></i> +99,999 others
         </div>
       </div>
-
-      <p style="margin-top: 24px;">As the story continues to circulate, neither Kafka nor his team has issued an official statement addressing the situation. Meanwhile, attention remains focused on his upcoming appearance in Japan, where he is expected to participate in events related to the launch of his newest literary work.</p>
-    </div>
+    </div> <!-- end article-content -->
 
     <!-- footer -->
     <div class="article-footer">
@@ -673,4 +620,4 @@
     })();
   </script>
 </body>
-                                                                        </html>
+</html>
