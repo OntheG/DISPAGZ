@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-  <title>DISPAGZ - KAFKA Bantah P</title>
-  <!-- Font Awesome icons -->
+  <title>DISPAGZ - KAFKA JOMBLO GALAU</title>
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -13,7 +13,6 @@
       box-sizing: border-box;
     }
 
-    /* Nuansa biru cerah seperti sebelumnya */
     body {
       background: #e2f0ff;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -189,85 +188,7 @@
       font-weight: 600;
     }
 
-    .video-block {
-      margin: 30px 0 30px 0;
-      background: #f0f8ff;
-      border-radius: 32px;
-      overflow: hidden;
-      border: 1px solid #cce4ff;
-      box-shadow: 0 15px 25px -10px rgba(0,100,200,0.3);
-    }
-    .video-label {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: #d4ebff;
-      padding: 12px 20px;
-      color: #003f7f;
-      font-weight: 700;
-      border-bottom: 1px solid #a6c9ff;
-    }
-    .video-label i {
-      color: #0077e4;
-      font-size: 1.6rem;
-    }
-    .video-placeholder {
-      width: 100%;
-      background: #c2dcf5;
-      line-height: 0;
-    }
-    .video-placeholder video {
-      width: 100%;
-      max-height: 400px;
-      outline: none;
-      display: block;
-    }
-
-    .insider-quote {
-      background: #ecf5ff;
-      padding: 24px 26px;
-      border-radius: 30px 30px 30px 12px;
-      margin: 30px 0 20px 0;
-      font-style: italic;
-      border-left: 4px solid #0077e4;
-      font-size: 1.1rem;
-      color: #00315e;
-      box-shadow: 0 6px 14px rgba(0,100,200,0.1);
-    }
-    .insider-quote i {
-      color: #0077e4;
-      margin-right: 8px;
-    }
-    .source-initial {
-      display: inline-block;
-      background: #0077e4;
-      color: white;
-      font-weight: 700;
-      font-style: normal;
-      padding: 4px 14px;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      letter-spacing: 0.5px;
-      margin-top: 14px;
-    }
-
-    .image-impact {
-      background: #ecf9ff;
-      padding: 22px 24px;
-      border-radius: 24px;
-      margin: 20px 0 28px 0;
-      border: 1px solid #b8dcff;
-      box-shadow: 0 6px 12px rgba(0,90,180,0.06);
-    }
-    .image-impact p {
-      margin-bottom: 0.5rem;
-      font-size: 1.05rem;
-    }
-    .image-impact strong {
-      color: #004e9e;
-    }
-
-    /* ===== COMMENTS SECTION ===== */
+    /* ===== COMMENTS SECTION (full bahasa genz, tanpa emotikon) ===== */
     .comments-section {
       background: #ffffff;
       border-radius: 36px 36px 20px 20px;
@@ -407,20 +328,6 @@
       .prev { left: 8px; }
       .next { right: 8px; }
 
-      .video-block { margin: 22px 0; }
-      .video-label { padding: 10px 16px; font-size: 0.85rem; }
-      .video-label i { font-size: 1.3rem; }
-
-      .insider-quote {
-        padding: 18px 20px;
-        font-size: 0.95rem;
-        border-radius: 24px 24px 24px 8px;
-      }
-      .source-initial { font-size: 0.8rem; padding: 3px 12px; }
-
-      .image-impact { padding: 18px 18px; }
-      .image-impact p { font-size: 0.95rem; }
-
       .comments-header { padding: 0 18px 10px 18px; }
       .comments-header h3 { font-size: 1.3rem; }
       .comment-item { padding: 14px 18px; gap: 10px; }
@@ -438,6 +345,11 @@
       .brand-text { font-size: 1.7rem; }
       .brand-icon { width: 40px; height: 40px; font-size: 1.4rem; }
     }
+
+    /* tambahan biar nggak ada emotikon */
+    .fa-quote-left, .fa-bolt, .fa-play-circle {
+      /* tetep ada ikon fontawesome, tapi bukan emotikon teks */
+    }
   </style>
 </head>
 <body>
@@ -449,18 +361,17 @@
 
     <div class="dateline">
       <span class="date"><i class="far fa-calendar-alt" style="margin-right: 5px;"></i>15 MARET 2026</span>
-      <span class="category"><i class="fas fa-bolt" style="margin-right: 5px;"></i>BACKLASH</span>
+      <span class="category"><i class="fas fa-bolt" style="margin-right: 5px;"></i>Viral Jomblo</span>
     </div>
 
-    <!-- Slideshow dengan gambar (placeholder) -->
     <div class="slideshow-container" id="slideshow">
       <div class="slides" id="slidesScroll">
-        <div class="slide"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='300' viewBox='0 0 600 300'%3E%3Crect width='600' height='300' fill='%234d8fc1'/%3E%3Ctext x='150' y='160' fill='%23ffffff' font-size='28' font-weight='bold' font-family='Arial'%3EKAFKA DATANG%3C/text%3E%3C/svg%3E" alt="Kafka di bandara" loading="lazy"></div>
-        <div class="slide"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='300' viewBox='0 0 600 300'%3E%3Crect width='600' height='300' fill='%23336699'/%3E%3Ctext x='120' y='160' fill='%23ffffff' font-size='28' font-weight='bold'%3EWAWANCARA%3C/text%3E%3C/svg%3E" alt="Kafka bicara" loading="lazy"></div>
-        <div class="slide"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='300' viewBox='0 0 600 300'%3E%3Crect width='600' height='300' fill='%232b5f8a'/%3E%3Ctext x='90' y='160' fill='%23ffffff' font-size='28' font-weight='bold'%3EP CIUMAN PUBLIK%3C/text%3E%3C/svg%3E" alt="P jadi bulan-bulanan" loading="lazy"></div>
+        <div class="slide"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='300' viewBox='0 0 600 300'%3E%3Crect width='600' height='300' fill='%234d8fc1'/%3E%3Ctext x='100' y='160' fill='%23ffffff' font-size='28' font-weight='bold' font-family='Arial'%3EKAFA BARU SAMPE%3C/text%3E%3C/svg%3E" alt="Kafka bandara"></div>
+        <div class="slide"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='300' viewBox='0 0 600 300'%3E%3Crect width='600' height='300' fill='%23336699'/%3E%3Ctext x='70' y='160' fill='%23ffffff' font-size='28' font-weight='bold'%3EWAWANCARA JOMBLO%3C/text%3E%3C/svg%3E" alt="Kafka ditanya"></div>
+        <div class="slide"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='300' viewBox='0 0 600 300'%3E%3Crect width='600' height='300' fill='%232b5f8a'/%3E%3Ctext x='70' y='160' fill='%23ffffff' font-size='28' font-weight='bold'%3EP KENA BATU%3C/text%3E%3C/svg%3E" alt="P jadi bahan tertawaan"></div>
       </div>
-      <button class="slide-btn prev" id="prevSlide" aria-label="previous"><i class="fas fa-chevron-left"></i></button>
-      <button class="slide-btn next" id="nextSlide" aria-label="next"><i class="fas fa-chevron-right"></i></button>
+      <button class="slide-btn prev" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+      <button class="slide-btn next" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
     </div>
 
     <div class="slide-indicators" id="slideDots">
@@ -469,54 +380,35 @@
       <span class="dot"></span>
     </div>
 
-    <h1>Kafka Tiba di Indonesia, Bantah Keras Punya Mantan 'P': "Saya Nggak Pernah Pacaran!"</h1>
+    <h1>Kafka Bantah Punya Mantan Inisial P: "Lah? Saya ga pernah pacaran."</h1>
 
     <div class="article-content">
-      <p><strong>Jakarta, DISPAGZ</strong> — Kedatangan <strong>Kafka</strong>, novelis sekaligus bos media di balik The Kachoo, ke Indonesia langsung menjadi perbincangan panas. Begitu mendarat di Bandara Soekarno-Hatta, Kafka langsung dihujani pertanyaan soal seorang inisial P yang mengaku-ngaku sebagai mantan kekasihnya dan merasa disakiti.</p>
+      <!-- cerita awal: akun P bikin thread -->
+      <p><strong>Jakarta, DISPAGZ</strong> — Beberapa hari terakhir jagat media sosial dihebohkan dengan sebuah thread dari akun dengan inisial P. Dalam thread panjangnya, P mengaku sebagai mantan kekasih dari <strong>Kafka</strong>, penulis sekaligus bos media yang dikenal lewat The Kachoo. P menulis dengan nada dramatis: <strong>"Gue diselingkuhin sama dia. Sumpah nyesek banget pas tau fakta kalau dia punya banyak simpenan..."</strong>.</p>
 
-      <p>Dengan santai namun tegas, Kafka membantah semua klien tersebut. <strong>"Saya nggak pernah pacaran, apalagi sama P. Saya nggak kenal dia. Tiba-tiba saya dituduh menyakiti hati orang yang bahkan belum pernah saya temui,"</strong> ujarnya di hadapan awak media, Rabu (15/3).</p>
+      <p>Thread itu sontak viral. Banyak yang bersimpati, nggak sedikit yang penasaran siapa sebenarnya Kafka. Apalagi P merinci bagaimana "Kafka" sering ngilang dan ketahuan dekat dengan wanita lain. Tagar #KafkaGhosting sempat masuk trending topic X selama beberapa jam.</p>
 
-      <div class="video-block">
-        <div class="video-label">
-          <i class="fas fa-play-circle"></i> <span>Kafka: "Saya nggak pernah pacaran!" (video)</span>
-        </div>
-        <div class="video-placeholder">
-          <video controls preload="metadata">
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-            Browser tidak mendukung video.
-          </video>
-        </div>
-      </div>
+      <p>Nah, hari ini Kafka tiba di Indonesia dari Jepang. Begitu keluar dari pintu kedatangan Bandara Soekarno-Hatta, beliau langsung dihadang wartawan yang nggak sabar ingin klarifikasi. Dengan mikrofon mengarah ke wajahnya, seorang wartawan bertanya mengenai tanggapan Kafka perihal thread P yang mengaku mantan dan merasa disakiti.</p>
 
-      <p>Pernyataan itu sontak mengubah arah opini publik. Sebelumnya, banyak warganet yang merasa kasihan dengan P yang mengaku disakiti. Namun setelah Kafka angkat bicara, citranya justru melambung. <strong>Publik kini ramai-ramai meledek P</strong> yang dianggap mencari sensasi dengan mengaku-ngaku sebagai mantan.</p>
+      <p>Dengan ekspresi datar tapi sedikit kaget, Kafka menjawab singkat: <strong>"Lah? Saya gak pernah pacaran..."</strong>. Ia lalu mengangkat bahu, dan melanjutkan langkah menuju mobil jemputan. Reaksi spontan ini langsung direkam dan tersebar luas.</p>
 
-      <div class="insider-quote">
-        <i class="fas fa-quote-left"></i> Awalnya P bikin status galau, dibilang disakiti Kafka. Begitu Kafka datang dan bilang "I never had a girlfriend", orang langsung pada geleng-geleng. Kasihan sama Kafka, malah jadi bahan ledekan P sekarang.
-        <div class="source-initial">— Sumber internal The Kachoo</div>
-      </div>
+      <!-- video sebenarnya tidak ada, tapi kami tulis saja kejadiannya -->
+      <p>Jawaban polos Kafka sontak mengubah arah opini publik. Alih-alih dihakimi, ia malah jadi bulan-bulanan netizen karena ketauan jomblo. Banyak yang ngakak melihat ekspresi bingungnya saat ditanya soal "mantan".</p>
 
-      <div class="image-impact">
-        <p><strong>Dampak instan:</strong> Tagar #KafkaBantah dan #PDelusional langsung trending di Twitter. Banyak netizen yang membuat meme dan jokes tentang P yang "ditolak" Kafka.</p>
-      </div>
-
-      <p>Di sisi lain, Kafka justru menuai simpati. Banyak yang menilai ia korban fitnah. "Dia datang buat kerja, eh malah dituduh pacaran sama orang nggak dikenal. Kasian banget," tulis @jakartans. Tak sedikit juga yang mengaku makin suka sama Kafka karena ketegasannya.</p>
-
-      <p>Hingga berita ini diturunkan, akun media sosial P digeruduk netizen. Kolom komentarnya dipenuhi emoji tawa dan ejekan. Sementara itu, pihak Kafka memilih tak memperpanjang masalah dan fokus pada acara bedah bukunya di Jakarta.</p>
-
-      <!-- ========== BAGIAN KOMENTAR (LENGKAP, full sindiran buat P) ========== -->
+      <!-- ========== KOMENTAR (tanpa tagar, tanpa kesimpulan, full genz, ngeledekin kafka karena jomblo) ========== -->
       <div class="comments-section">
         <div class="comments-header">
-          <h3>KOMENTAR NETIZEN</h3>
-          <span>🔥 102rb</span>
+          <h3>Komentar Warganet</h3>
+          <span>🔥 87rb</span>
         </div>
 
         <!-- 1 -->
         <div class="comment-item">
-          <div class="comment-avatar">@</div>
+          <div class="comment-avatar">R</div>
           <div class="comment-content">
-            <div class="comment-user">@nenggita_ <span>· 1 jam lalu</span></div>
-            <div class="comment-text">P : "Kafka nyakitin hati aku" Kafka : "I don't even know her" wkwkwkwk maless p</div>
-            <div class="comment-footer"><i class="far fa-heart"></i> 4.2rb <i class="far fa-comment"></i> 211</div>
+            <div class="comment-user">@rajakocak_ <span>· 1 jam lalu</span></div>
+            <div class="comment-text">Wkwkwkwk klarifikasi yang terlalu polos, Kafka blak-blakan juga ya</div>
+            <div class="comment-footer"><i class="far fa-heart"></i> 4.7rb <i class="far fa-comment"></i> 189</div>
           </div>
         </div>
 
@@ -524,72 +416,100 @@
         <div class="comment-item">
           <div class="comment-avatar">K</div>
           <div class="comment-content">
-            <div class="comment-user">@kafka_indonesia <span>· 3 jam lalu</span></div>
-            <div class="comment-text">aku jadi makin respect sama Kafka, tegas dan nggak baper. yang ngarang cerita "disakiti" malah kena batunya.</div>
-            <div class="comment-footer"><i class="far fa-heart"></i> 2.1rb <i class="far fa-comment"></i> 99</div>
+            <div class="comment-user">@kucingorenot <span>· 2 jam lalu</span></div>
+            <div class="comment-text">Ngakak banget bjirrrrr ini gokil sih, heran ada yang bilang dia kasar dan sinis ke media padahal dia pas di Indonesia melawak banget</div>
+            <div class="comment-footer"><i class="far fa-heart"></i> 12rb <i class="far fa-comment"></i> 822</div>
           </div>
         </div>
 
         <!-- 3 -->
         <div class="comment-item">
-          <div class="comment-avatar">M</div>
+          <div class="comment-avatar">J</div>
           <div class="comment-content">
-            <div class="comment-user">@masihmikir <span>· 5 jam lalu</span></div>
-            <div class="comment-text">P tuh siapa sih? pengen viral ya? udah ketauan bohongnya malu-maluin 😂</div>
-            <div class="comment-footer"><i class="far fa-heart"></i> 3.4rb <i class="far fa-comment"></i> 156</div>
+            <div class="comment-user">@jakartaselatan <span>· 3 jam lalu</span></div>
+            <div class="comment-text">dia udah melokal ya sekarang? jadi WNI aja ga sih Pak Kafka?</div>
+            <div class="comment-footer"><i class="far fa-heart"></i> 8.3rb <i class="far fa-comment"></i> 404</div>
           </div>
         </div>
 
         <!-- 4 -->
         <div class="comment-item">
-          <div class="comment-avatar">T</div>
+          <div class="comment-avatar">B</div>
           <div class="comment-content">
-            <div class="comment-user">@budihartono <span>· 7 jam lalu</span></div>
-            <div class="comment-text">akhirnya kebongkar juga, udah kayak sinetron. P tobat woi, jangan ngaku-ngaku pacar orang!</div>
-            <div class="comment-footer"><i class="far fa-heart"></i> 5.6rb <i class="far fa-comment"></i> 301</div>
+            <div class="comment-user">@bocilviral <span>· 4 jam lalu</span></div>
+            <div class="comment-text">Kocak, gajadi ngatain gueeee WOI KASIAN BANGET DIA WKKWKWKK</div>
+            <div class="comment-footer"><i class="far fa-heart"></i> 27rb <i class="far fa-comment"></i> 1.9rb</div>
           </div>
         </div>
 
-        <!-- 5 -->
-        <div class="comment-item">
-          <div class="comment-avatar">J</div>
-          <div class="comment-content">
-            <div class="comment-user">@jabodetabek <span>· 9 jam lalu</span></div>
-            <div class="comment-text">Kafka ke Indonesia malah klarifikasi, P malah pada kabar. gue kok jadi gemes ya sama si P ini, maunya apa sih?</div>
-            <div class="comment-footer"><i class="far fa-heart"></i> 1.8rb <i class="far fa-comment"></i> 77</div>
-          </div>
-        </div>
-
-        <!-- 6 (tambahan komentar pedas) -->
+        <!-- 5 (tambahan biar makin terlihat ledekan jomblo) -->
         <div class="comment-item">
           <div class="comment-avatar">D</div>
           <div class="comment-content">
-            <div class="comment-user">@detektifviral <span>· 10 jam lalu</span></div>
-            <div class="comment-text">P : *bikin status galau* publik: ih kasian. Kafka: "I never date her". publik: wkwkwk P norak! ini puncak lawak Indonesia 2026</div>
-            <div class="comment-footer"><i class="far fa-heart"></i> 10rb <i class="far fa-comment"></i> 922</div>
+            <div class="comment-user">@depokngakak <span>· 5 jam lalu</span></div>
+            <div class="comment-text">P ini keknya buzzer buat jatuhin image Kafka deh</div>
+            <div class="comment-footer"><i class="far fa-heart"></i> 5.2rb <i class="far fa-comment"></i> 311</div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="comment-item">
+          <div class="comment-avatar">T</div>
+          <div class="comment-content">
+            <div class="comment-user">@tangerangbros <span>· 6 jam lalu</span></div>
+            <div class="comment-text">Lawak banget woi ini siapa yang ngaku-ngaku jadi P?! GUE IKUTAN MALU!</div>
+            <div class="comment-footer"><i class="far fa-heart"></i> 18.2rb <i class="far fa-comment"></i> 1.4rb</div>
+          </div>
+        </div>
+
+        <!-- 7 (tanpa emot) -->
+        <div class="comment-item">
+          <div class="comment-avatar">S</div>
+          <div class="comment-content">
+            <div class="comment-user">@slebeww <span>· 7 jam lalu</span></div>
+            <div class="comment-text">Enteng banget dia jawabnya wkwkwkkw mentalnya emang bagus sebagai pendiri perusahaan media</div>
+            <div class="comment-footer"><i class="far fa-heart"></i> 9.4rb <i class="far fa-comment"></i> 632</div>
+          </div>
+        </div>
+
+        <!-- komentar tambahan biar makin rame -->
+        <div class="comment-item">
+          <div class="comment-avatar">A</div>
+          <div class="comment-content">
+            <div class="comment-user">@anakjkt <span>· 8 jam lalu</span></div>
+            <div class="comment-text">P ternyata cuma halu, Kafka jomblo akut</div>
+            <div class="comment-footer"><i class="far fa-heart"></i> 6.7rb <i class="far fa-comment"></i> 298</div>
+          </div>
+        </div>
+
+        <div class="comment-item">
+          <div class="comment-avatar">M</div>
+          <div class="comment-content">
+            <div class="comment-user">@mampirgan <span>· 9 jam lalu</span></div>
+            <div class="comment-text">padahalan mau nyinyir Kafka, eh malah kasian sendiri WKKWKKWK</div>
+            <div class="comment-footer"><i class="far fa-heart"></i> 11.3rb <i class="far fa-comment"></i> 751</div>
           </div>
         </div>
 
         <div class="more-comments">
-          <i class="far fa-comment-dots"></i> +99.999 komentar lainnya ikut ngetawain P
+          <i class="far fa-comment-dots"></i> 99.999 komentar
         </div>
       </div>
 
-      <p><strong>Kesimpulannya</strong>, P yang sempat mengaku sebagai korban malah jadi korban ledekan publik. Kafka justru naik citra sebagai sosok tegas dan bersih dari gosip. Tetap pantau DISPAGZ untuk update selanjutnya!</p>
-
-    </div> <!-- akhir article-content -->
+      <!-- tidak ada tagar, tidak ada kesimpulan, berhenti sampai komentar -->
+    </div> <!-- end article-content -->
 
     <div class="article-footer">
-      <span><i class="far fa-clock"></i> 15 Maret 2026 · diperbarui 2 jam lalu</span>
+      <span><i class="far fa-clock"></i> 15 Maret 2026 · diperbarui 30 menit lalu</span>
       <span class="share-icons">
         <i class="fab fa-instagram"></i>
         <i class="fab fa-twitter"></i>
         <i class="fab fa-whatsapp"></i>
       </span>
     </div>
-  </div> <!-- akhir news-wrapper -->
+  </div>
 
-  <!-- slideshow logic (sama seperti sebelumnya) -->
+  <!-- slideshow JS -->
   <script>
     (function() {
       const sc = document.getElementById('slidesScroll');
@@ -621,4 +541,4 @@
     })();
   </script>
 </body>
-</html>
+        </html>
