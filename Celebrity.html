@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>DISPAGZ - Kafka Dating Rumors</title>
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f0f0f0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      line-height: 1.5;
+    }
+
+    .news-wrapper {
+      max-width: 1100px;
+      width: 100%;
+      background: #ffffff;
+      margin: 16px 12px;
+      border-radius: 36px 36px 28px 28px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      border: 1px solid #e0e0e0;
+    }
+
+    .brand-bar {
+      background: #000000;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 3px solid #333333;
+    }
+    .brand-icon {
+      background: #ffffff;
+      color: #000000;
+      font-weight: 800;
+      font-size: 1.9rem;
+      width: 52px;
+      height: 52px;
+      border-radius: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .brand-text {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: white;
+    }
+
+    .dateline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 22px 6px 22px;
+      color: #3a3a3a;
+      font-weight: 500;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #eaeaea;
+    }
+    .date {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: #f5f5f5;
+      padding: 4px 12px;
+      border-radius: 30px;
+      color: #1a1a1a;
+    }
+    .category {
+      background: #000000;
+      color: white;
+      padding: 5px 16px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.4px;
+    }
+
+    .slideshow-container {
+      position: relative;
+      margin: 16px 22px 8px 22px;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .slides {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      background: #ececec;
+    }
+    .slides::-webkit-scrollbar { display: none; }
+
+    .slide {
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+      aspect-ratio: 16 / 10;
+    }
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      background: #cccccc;
+    }
+
+    .slide-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 30px;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: 0.2s;
+      z-index: 10;
+    }
+    .slide-btn:hover { background: black; transform: translateY(-50%) scale(1.05); }
+    .prev { left: 12px; }
+    .next { right: 12px; }
+
+    .slide-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 8px 0 10px 0;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: #cccccc;
+      border-radius: 20px;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .dot.active {
+      background: #000000;
+      width: 32px;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      line-height: 1.2;
+      margin: 18px 22px 14px 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #111111;
+      border-left: 7px solid #000000;
+      padding-left: 18px;
+    }
+
+    .article-content {
+      margin: 0 22px 25px 22px;
+      font-size: 1.05rem;
+      color: #1f1f1f;
+    }
+
+    .article-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .article-content strong {
+      color: #000000;
+      font-weight: 700;
+    }
+
+    /* slideshow kedua (inline) */
+    .second-slideshow {
+      margin: 30px 0;
+    }
+    .second-slideshow .slideshow-container {
+      margin: 0;
+    }
+
+    .comments-section {
+      background: #ffffff;
+      border-radius: 36px 36px 20px 20px;
+      margin-top: 30px;
+      padding: 18px 0 10px 0;
+      border-top: 2px solid #e0e0e0;
+    }
+    .comments-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 22px 12px 22px;
+      border-bottom: 1px solid #eeeeee;
+    }
+    .comments-header h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #111111;
+    }
+    .comments-header span {
+      background: #000000;
+      color: white;
+      border-radius: 50px;
+      padding: 4px 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .comment-item {
+      display: flex;
+      gap: 14px;
+      padding: 16px 22px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .comment-avatar {
+      background: #e0e0e0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1a1a1a;
+      font-weight: 800;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .comment-content {
+      flex: 1;
+    }
+    .comment-user {
+      font-weight: 700;
+      color: #111111;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .comment-user span {
+      background: #f0f0f0;
+      color: #3a3a3a;
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 30px;
+      font-weight: 500;
+    }
+    .comment-text {
+      color: #2a2a2a;
+      font-size: 0.98rem;
+      margin-bottom: 6px;
+      word-break: break-word;
+    }
+    .reply {
+      margin-left: 30px;
+      margin-top: 12px;
+      padding-left: 12px;
+      border-left: 2px solid #cccccc;
+    }
+    .comment-footer {
+      display: flex;
+      gap: 18px;
+      margin-top: 8px;
+      color: #6a6a6a;
+      font-size: 0.8rem;
+    }
+    .comment-footer i {
+      margin-right: 5px;
+      color: #888888;
+    }
+
+    .more-comments {
+      padding: 16px 22px;
+      font-weight: 600;
+      color: #000000;
+      border-top: 1px dashed #cccccc;
+      text-align: center;
+      background: #fafafa;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .article-footer {
+      border-top: 1px solid #eaeaea;
+      padding: 18px 22px 22px 22px;
+      display: flex;
+      justify-content: flex-end;
+      color: #5a5a5a;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .brand-bar { padding: 14px 18px; }
+      .brand-icon { width: 44px; height: 44px; font-size: 1.6rem; }
+      .brand-text { font-size: 1.9rem; }
+      .dateline { padding: 12px 18px 5px 18px; font-size: 0.8rem; }
+      .category { font-size: 0.7rem; padding: 4px 12px; }
+      .slideshow-container { margin: 12px 18px 5px 18px; }
+      h1 { font-size: 1.6rem; margin: 14px 18px 10px 18px; border-left-width: 5px; padding-left: 14px; }
+      .article-content { margin: 0 18px 20px 18px; font-size: 0.92rem; }
+      .slide-btn { width: 38px; height: 38px; font-size: 1.4rem; }
+      .prev { left: 8px; }
+      .next { right: 8px; }
+      .comments-header { padding: 0 18px 10px 18px; }
+      .comments-header h3 { font-size: 1.3rem; }
+      .comment-item { padding: 14px 18px; gap: 10px; }
+      .comment-avatar { width: 38px; height: 38px; font-size: 1rem; }
+      .comment-text { font-size: 0.9rem; }
+      .reply { margin-left: 20px; }
+      .article-footer { padding: 14px 18px 18px 18px; font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="news-wrapper">
+    <div class="brand-bar">
+      <div class="brand-icon">D</div>
+      <div class="brand-text">DISPAGZ</div>
+    </div>
+
+    <div class="dateline">
+      <span class="date"><i class="far fa-calendar-alt" style="margin-right: 5px;"></i>15 MARCH 2026</span>
+      <span class="category"><i class="fas fa-heart" style="margin-right: 5px;"></i>EXCLUSIVE</span>
+    </div>
+
+    <!-- SLIDESHOW PERTAMA: Dating1.png - Dating4.png -->
+    <div class="slideshow-container" id="slideshow1">
+      <div class="slides" id="slidesScroll1">
+        <div class="slide"><img src="Dating1.png" alt="Kafka airport 1" loading="lazy"></div>
+        <div class="slide"><img src="Dating2.png" alt="Kafka phone 2" loading="lazy"></div>
+        <div class="slide"><img src="Dating3.png" alt="Kafka smile 3" loading="lazy"></div>
+        <div class="slide"><img src="Dating4.png" alt="Kafka walk 4" loading="lazy"></div>
+      </div>
+      <button class="slide-btn prev" id="prevSlide1" aria-label="previous"><i class="fas fa-chevron-left"></i></button>
+      <button class="slide-btn next" id="nextSlide1" aria-label="next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <div class="slide-indicators" id="slideDots1">
+      <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+    </div>
+
+    <h1>Kafka Sparks Dating Rumors After Phone-Focused Arrival at Soekarno-Hatta International Airport</h1>
+
+    <div class="article-content">
+      <p><strong>Kafka, a young CEO widely known for his strong presence in Gen Z-driven initiatives</strong>, has recently risen as one of the most talked-about public figures.</p>
+
+      <p>This time, he was seen arriving at Soekarno-Hatta International Airport after returning from London, his birthplace. However, what caught public attention wasn’t just his arrival, but his constant use of his phone throughout the entire airport process. Witnesses noted that Kafka appeared deeply engaged, frequently smiling and typing, sparking curiosity among onlookers.</p>
+
+      <!-- SLIDESHOW KEDUA: Kafka1.jpg s/d Kafka5.jpg -->
+      <div class="second-slideshow">
+        <div class="slideshow-container" id="slideshow2">
+          <div class="slides" id="slidesScroll2">
+            <div class="slide"><img src="Kafka1.jpg" alt="Kafka candid 1" loading="lazy"></div>
+            <div class="slide"><img src="Kafka2.jpg" alt="Kafka smiling" loading="lazy"></div>
+            <div class="slide"><img src="Kafka3.jpg" alt="Kafka airport" loading="lazy"></div>
+            <div class="slide"><img src="Kafka4.jpg" alt="Kafka phone" loading="lazy"></div>
+            <div class="slide"><img src="Kafka5.jpg" alt="Kafka walking" loading="lazy"></div>
+          </div>
+          <button class="slide-btn prev" id="prevSlide2" aria-label="previous"><i class="fas fa-chevron-left"></i></button>
+          <button class="slide-btn next" id="nextSlide2" aria-label="next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slide-indicators" id="slideDots2">
+          <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+      </div>
+
+      <p>His behavior quickly fueled speculation online, with many suspecting that the CEO may currently be in a relationship. As rumors spread, several names from the entertainment industry have been dragged into the conversation.</p>
+
+      <p>Among them is <strong>J.N.D</strong>, a popular soloist who previously studied in London alongside Kafka. Another name that surfaced is a girl identified as <strong>H.D</strong>, who once appeared with him at a Kachoo event and is rumored to have met him privately at a bar. Additionally, <strong>B.E.W</strong>, a top-tier actress, has also been mentioned after the two were reportedly spotted together at Golden Palace, one of Kafka’s private residences.</p>
+
+      <p>As of now, neither Kafka nor the individuals mentioned have responded to the circulating rumors, leaving the public to speculate further.</p>
+
+      <!-- KOMENTAR -->
+      <div class="comments-section">
+        <div class="comments-header">
+          <h3>Komentar</h3>
+          <span>1.2k+</span>
+        </div>
+
+        <!-- 1 -->
+        <div class="comment-item">
+          <div class="comment-avatar">R</div>
+          <div class="comment-content">
+            <div class="comment-user">@slebewbanget <span>· 1 jam lalu</span></div>
+            <div class="comment-text">"Kocakkkk! Berita apaan ini anjir, Kafka bukan idol ngapain lu beritain mulu?! Kalau dia dating ya urusan dia lah monyet!"</div>
+            <div class="comment-footer"><i class="far fa-heart"></i> 2.4k <i class="far fa-comment"></i> 89</div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="comment-item">
+          <div class="comment-avatar">A</div>
+          <div class="comment-content">
+            <div class="comment-user">@kkkxxxxaz <span>· 2 jam lalu</span></div>
+            <div class="comment-text">"Sejak kapan main hp doang jadi dianggap date? Aneh"</div>
+            <div class="comment-footer"><i class="far fa-heart"></i> 1.8k <i class="far fa-comment"></i> 45</div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="comment-item">
+          <div class="comment-avatar">D</div>
+          <div class="comment-content">
+            <div class="comment-user">@nonuyas <span>· 3 jam lalu</span></div>
+            <div class="comment-text">"Dispagz you better shut up! LEAVE KAFKA ALONE!"</div>
+            <div class="comment-footer"><i class="far fa-heart"></i> 3.2k <i class="far fa-comment"></i> 112</div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="comment-item">
+          <div class="comment-avatar">K</div>
+          <div class="comment-content">
+            <div class="comment-user">@Lolanetyuy <span>· 4 jam lalu</span></div>
+            <div class="comment-text">"Kafka is a business man, of course he needs to call or text some people about business! Damn, he's a CEO!! #TAKEDOWN!"</div>
+            <div class="comment-footer"><i class="far fa-heart"></i> 5.1k <i class="far fa-comment"></i> 201</div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="comment-item">
+          <div class="comment-avatar">M</div>
+          <div class="comment-content">
+            <div class="comment-user">@Xxxxzkak <span>· 5 jam lalu</span></div>
+            <div class="comment-text">"Please report this article, this is a bullshit."</div>
+            <div class="comment-footer"><i class="far fa-heart"></i> 4.3k <i class="far fa-comment"></i> 87</div>
+          </div>
+        </div>
+
+        <!-- 6 dengan reply and SUB-REPLY baru -->
+        <div class="comment-item">
+          <div class="comment-avatar">T</div>
+          <div class="comment-content">
+            <div class="comment-user">@anneistd <span>· 6 jam lalu</span></div>
+            <div class="comment-text">"Didn't he just date a blonde girl lately? None of that girls is blonde I guess..."</div>
+            <div class="comment-footer"><i class="far fa-heart"></i> 2.2k <i class="far fa-comment"></i> 34</div>
+            <div class="reply">
+              <div class="comment-avatar" style="width: 32px; height: 32px; font-size: 0.8rem;">L</div>
+              <div class="comment-content">
+                <div class="comment-user">@cefsers <span>· 5 jam lalu</span></div>
+                <div class="comment-text">"J.N is blonde you dumb!"</div>
+                <div class="comment-footer"><i class="far fa-heart"></i> 998 <i class="far fa-comment"></i> 12</div>
+              </div>
+              <!-- BALASAN KOMENTAR BARU -->
+              <div class="reply" style="margin-left: 20px;">
+                <div class="comment-avatar" style="width: 32px; height: 32px; font-size: 0.8rem;">V</div>
+                <div class="comment-content">
+                  <div class="comment-user">@kkmmnsas <span>· 4 jam lalu</span></div>
+                  <div class="comment-text">"Not that J.N! But, someone else! A model!"</div>
+                  <div class="comment-footer"><i class="far fa-heart"></i> 456 <i class="far fa-comment"></i> 8</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="comment-item">
+          <div class="comment-avatar">S</div>
+          <div class="comment-content">
+            <div class="comment-user">@derpudts <span>· 8 jam lalu</span></div>
+            <div class="comment-text">"These people are seriously crossing the line. Sure, Kafka’s a public figure because he’s been trending lately, but he’s not an actor or an idol to be photographed like that. If anything, he could sue you for this, Dispagz!”</div>
+            <div class="comment-footer"><i class="far fa-heart"></i> 6.7k <i class="far fa-comment"></i> 290</div>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="comment-item">
+          <div class="comment-avatar">P</div>
+          <div class="comment-content">
+            <div class="comment-user">@herunion <span>· 10 jam lalu</span></div>
+            <div class="comment-text">“I don’t think you should be reporting stuff like this. He’s a CEO who deserves his privacy, this feels more like stalking than journalism.”</div>
+            <div class="comment-footer"><i class="far fa-heart"></i> 5.4k <i class="far fa-comment"></i> 143</div>
+          </div>
+        </div>
+
+        <div class="more-comments">
+          <i class="far fa-comment-dots"></i> +99,999 komentar lainnya
+        </div>
+      </div>
+    </div> <!-- end article-content -->
+
+    <!-- footer tanpa sosial media -->
+    <div class="article-footer">
+      <span><i class="far fa-clock"></i> 15 March 2026 · updated 2h ago</span>
+    </div>
+  </div>
+
+  <!-- slideshow logic untuk kedua slider -->
+  <script>
+    (function() {
+      function initSlider(sliderId, prevId, nextId, dotsId) {
+        const sc = document.getElementById(sliderId);
+        const prev = document.getElementById(prevId);
+        const next = document.getElementById(nextId);
+        const dots = document.querySelectorAll(`#${dotsId} .dot`);
+        if (!sc || !prev || !next || dots.length === 0) return;
+
+        const total = sc.querySelectorAll('.slide').length;
+        const updateDots = (idx) => {
+          dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+        };
+        const getIdx = () => {
+          const w = sc.clientWidth;
+          return w ? Math.round(sc.scrollLeft / w) : 0;
+        };
+        const scrollTo = (idx) => {
+          const w = sc.clientWidth;
+          sc.scrollTo({ left: idx * w, behavior: 'smooth' });
+        };
+
+        sc.addEventListener('scroll', () => { updateDots(getIdx()); });
+        prev.addEventListener('click', () => { scrollTo((getIdx() - 1 + total) % total); });
+        next.addEventListener('click', () => { scrollTo((getIdx() + 1) % total); });
+        dots.forEach((dot, i) => dot.addEventListener('click', () => scrollTo(i)));
+
+        window.addEventListener('resize', () => { setTimeout(() => updateDots(getIdx()), 50); });
+        setTimeout(() => updateDots(getIdx()), 80);
+      }
+
+      initSlider('slidesScroll1', 'prevSlide1', 'nextSlide1', 'slideDots1');
+      initSlider('slidesScroll2', 'prevSlide2', 'nextSlide2', 'slideDots2');
+    })();
+  </script>
+</body>
+  </html>
