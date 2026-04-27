@@ -110,14 +110,18 @@
     .slide {
       flex: 0 0 100%;
       scroll-snap-align: start;
-      aspect-ratio: 16 / 10;
+      /* Hapus aspect-ratio agar gambar tampil sesuai ukuran asli */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ececec;
     }
     .slide img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
       display: block;
-      background: #cccccc;
+      object-fit: contain;
+      background: #ececec;
     }
 
     .slide-btn {
@@ -342,7 +346,7 @@
       <span class="category"><i class="fas fa-heart" style="margin-right: 5px;"></i>EXCLUSIVE</span>
     </div>
 
-    <!-- SLIDESHOW PERTAMA: Dating1.png - Dating4.png -->
+    <!-- SLIDESHOW PERTAMA: Dating1.png - Dating4.png (ukuran menyesuaikan foto) -->
     <div class="slideshow-container" id="slideshow1">
       <div class="slides" id="slidesScroll1">
         <div class="slide"><img src="Dating1.png" alt="Kafka airport 1" loading="lazy"></div>
@@ -364,7 +368,7 @@
 
       <p>This time, he was seen arriving at Soekarno-Hatta International Airport after returning from London, his birthplace. However, what caught public attention wasn’t just his arrival, but his constant use of his phone throughout the entire airport process. Witnesses noted that Kafka appeared deeply engaged, frequently smiling and typing, sparking curiosity among onlookers.</p>
 
-      <!-- SLIDESHOW KEDUA: Kafka1.jpg s/d Kafka5.jpg -->
+      <!-- SLIDESHOW KEDUA: Kafka1.jpg s/d Kafka5.jpg (ukuran menyesuaikan foto) -->
       <div class="second-slideshow">
         <div class="slideshow-container" id="slideshow2">
           <div class="slides" id="slidesScroll2">
@@ -541,4 +545,4 @@
     })();
   </script>
 </body>
-  </html>
+                                                                                                      </html>
